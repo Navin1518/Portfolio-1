@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Python Developer & AI Enthusiast</title>
+  <!-- REPLACE: You can also update the <title> above to your own name -->
+
+  <!-- Google Fonts: Space Grotesk (headings) + Inter (body text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <!-- REPLACE: Your Full Name (short form, e.g. "Aditya Rao") -->
+        Your<span class="logo-accent">Name</span><span class="cursor-blink">_</span>
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Dark / Light mode toggle button -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+        <!-- Icon swapped via JS: moon = dark active, sun = light active -->
+        <svg id="themeIconMoon" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg id="themeIconSun" class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <div class="hero-text fade-section">
+          <p class="hero-eyebrow">// python developer & ai enthusiast</p>
+          <h1 class="hero-heading">
+            Hi, I'm
+            <!-- REPLACE: Your Full Name -->
+            <span class="hero-name">Your Name</span>
+          </h1>
+          <p class="hero-subheading">
+            <!-- REPLACE: Your short tagline (e.g. Python Developer & AI Enthusiast) -->
+            B.Tech CSE student building things with Python, machine learning, and a lot of curiosity.
+          </p>
+          <p class="hero-tagline">
+            <!-- REPLACE: A one-line personal tagline / mission statement -->
+            I turn ideas into working code — one project, one bug, one late night at a time.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-section">
+          <div class="profile-ring">
+            <!-- REPLACE: Profile image path (e.g. images/profile.jpg) -->
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Your Name profile photo"
+              class="profile-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="section about">
+      <div class="section-inner">
+        <h2 class="section-heading">About</h2>
+        <p class="about-text fade-section">
+          <!-- REPLACE: About section text (3–4 lines about you) -->
+          I'm a B.Tech Computer Science student with a strong interest in Python development
+          and Artificial Intelligence. I enjoy building practical projects, exploring machine
+          learning concepts, and solving real problems with code. My goal is to grow into a
+          well-rounded software/AI engineer by constantly learning, building, and sharing what I make.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="section skills">
+      <div class="section-inner">
+        <h2 class="section-heading">Skills</h2>
+        <div class="skills-grid fade-section">
+          <!-- REPLACE: Skill names in the list — add/remove as needed -->
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">AI Tools</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Data Structures</span>
+          <span class="skill-tag">NumPy / Pandas</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Problem Solving</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section id="projects" class="section projects">
+      <div class="section-inner">
+        <h2 class="section-heading">Projects</h2>
+        <div class="projects-grid">
+
+          <!-- Project Card 1 -->
+          <article class="project-card fade-section">
+            <div class="project-card-top">
+              <!-- REPLACE: Project title -->
+              <h3 class="project-title">AI Chatbot Assistant</h3>
+              <!-- REPLACE: Project description (2–3 lines) -->
+              <p class="project-desc">
+                A Python-based conversational chatbot using NLP techniques to answer
+                user queries and hold basic contextual conversations.
+              </p>
+              <div class="project-tags">
+                <!-- REPLACE: Tech stack tags used in this project -->
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLTK</span>
+                <span class="tech-tag">Flask</span>
+              </div>
+            </div>
+            <div class="project-card-links">
+              <!-- REPLACE: GitHub repo link for this project -->
+              <a href="https://github.com/yourusername/ai-chatbot" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub</a>
+              <!-- REPLACE: Live demo link (or remove if not deployed) -->
+              <a href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Live Demo</a>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card fade-section">
+            <div class="project-card-top">
+              <!-- REPLACE: Project title -->
+              <h3 class="project-title">Handwritten Digit Recognizer</h3>
+              <!-- REPLACE: Project description (2–3 lines) -->
+              <p class="project-desc">
+                A neural network trained on the MNIST dataset to classify handwritten
+                digits with a simple web interface for live predictions.
+              </p>
+              <div class="project-tags">
+                <!-- REPLACE: Tech stack tags used in this project -->
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">NumPy</span>
+              </div>
+            </div>
+            <div class="project-card-links">
+              <!-- REPLACE: GitHub repo link for this project -->
+              <a href="https://github.com/yourusername/digit-recognizer" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub</a>
+              <!-- REPLACE: Live demo link (or remove if not deployed) -->
+              <a href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Live Demo</a>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card fade-section">
+            <div class="project-card-top">
+              <!-- REPLACE: Project title -->
+              <h3 class="project-title">Expense Tracker CLI</h3>
+              <!-- REPLACE: Project description (2–3 lines) -->
+              <p class="project-desc">
+                A command-line tool built in Python to log, categorize, and visualize
+                personal expenses, backed by a lightweight SQLite database.
+              </p>
+              <div class="project-tags">
+                <!-- REPLACE: Tech stack tags used in this project -->
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">Matplotlib</span>
+              </div>
+            </div>
+            <div class="project-card-links">
+              <!-- REPLACE: GitHub repo link for this project -->
+              <a href="https://github.com/yourusername/expense-tracker" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub</a>
+              <!-- REPLACE: Live demo link (or remove if not deployed) -->
+              <a href="#" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Details</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="section contact">
+      <div class="section-inner">
+        <h2 class="section-heading">Contact</h2>
+        <p class="contact-text fade-section">
+          I'm always open to talking about Python, AI, internships, or interesting projects.
+          Feel free to reach out on any platform below.
+        </p>
+
+        <div class="social-links fade-section">
+          <!-- REPLACE: Instagram profile URL -->
+          <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>Instagram</span>
+          </a>
+
+          <!-- REPLACE: LinkedIn profile URL -->
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <!-- REPLACE: GitHub profile URL -->
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            <span>GitHub</span>
+          </a>
+
+          <!-- REPLACE: Your email address (mailto link) -->
+          <a href="mailto:youremail@example.com" class="social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <span>Email</span>
+          </a>
+
+          <!-- REPLACE: WhatsApp number/link (use https://wa.me/<countrycode><number>) -->
+          <a href="https://wa.me/910000000000" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-11.8 7.8L3 21l1.7-6.2A8.5 8.5 0 1 1 21 11.5z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <p>
+      &copy; <span id="year"></span>
+      <!-- REPLACE: Your Full Name -->
+      Your Name. Built with HTML, CSS & JavaScript.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* =====================================================
+   PORTFOLIO SCRIPT
+   1. Dark/Light mode toggle logic
+   2. Mobile nav menu toggle
+   3. Smooth scroll + auto-close mobile menu on link click
+   4. Fade-in-on-scroll using IntersectionObserver
+   5. Auto-update footer year
+   ===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* -----------------------------------------------------
+     1. DARK / LIGHT MODE TOGGLE
+     Preference is saved in localStorage so it persists
+     across page reloads. Dark mode is the default.
+     ----------------------------------------------------- */
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("themeToggle");
+  const iconMoon = document.getElementById("themeIconMoon");
+  const iconSun = document.getElementById("themeIconSun");
+
+  const applyTheme = (theme) => {
+    if (theme === "light") {
+      root.setAttribute("data-theme", "light");
+      iconMoon.style.display = "none";
+      iconSun.style.display = "block";
+    } else {
+      root.removeAttribute("data-theme"); // default = dark
+      iconMoon.style.display = "block";
+      iconSun.style.display = "none";
+    }
+  };
+
+  // Load saved preference (defaults to dark if nothing saved)
+  const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+  applyTheme(savedTheme);
+
+  themeToggle.addEventListener("click", () => {
+    const isLight = root.getAttribute("data-theme") === "light";
+    const newTheme = isLight ? "dark" : "light";
+    applyTheme(newTheme);
+    localStorage.setItem("portfolio-theme", newTheme);
+  });
+
+  /* -----------------------------------------------------
+     2. MOBILE NAV MENU TOGGLE
+     ----------------------------------------------------- */
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+
+  /* -----------------------------------------------------
+     3. SMOOTH SCROLL FOR NAV LINKS
+     (CSS `scroll-behavior: smooth` already handles this,
+     this JS closes the mobile menu after a link is tapped)
+     ----------------------------------------------------- */
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href");
+      const targetEl = document.querySelector(targetId);
+
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Close mobile menu after clicking a link
+      navLinks.classList.remove("open");
+    });
+  });
+
+  /* -----------------------------------------------------
+     4. FADE-IN ON SCROLL
+     Adds .visible to elements with class "fade-section"
+     once they enter the viewport.
+     ----------------------------------------------------- */
+  const fadeEls = document.querySelectorAll(".fade-section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // animate only once
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  fadeEls.forEach((el) => observer.observe(el));
+
+  /* -----------------------------------------------------
+     5. AUTO-UPDATE FOOTER YEAR
+     ----------------------------------------------------- */
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+});
