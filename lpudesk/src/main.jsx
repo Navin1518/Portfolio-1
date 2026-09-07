@@ -1,0 +1,17 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { HashRouter } from "react-router-dom";
+import App from "./App.jsx";
+import { LibraryProvider } from "./context/LibraryContext.jsx";
+import "./index.css";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    {/* HashRouter keeps routes working when hosted on static GitHub Pages. */}
+    <HashRouter>
+      <LibraryProvider>
+        <App />
+      </LibraryProvider>
+    </HashRouter>
+  </StrictMode>
+);
