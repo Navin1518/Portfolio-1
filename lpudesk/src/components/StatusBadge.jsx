@@ -1,4 +1,4 @@
-import { badgeStyles } from "../utils/statusStyles.js";
+import { badgeStyles } from "../utils/statusStyle.js";
 
 /** Small coloured pill used for crowd status and book availability. */
 export default function StatusBadge({ label, tone = "slate" }) {

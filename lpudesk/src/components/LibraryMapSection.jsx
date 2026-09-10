@@ -1,5 +1,5 @@
 import { libraryFloors, mapLegend } from "../data/libraryMap.js";
-import { badgeStyles } from "../utils/statusStyles.js";
+import { badgeStyles } from "../utils/statusStyle.js";
 
 /**
  * Floor-wise visual guide of the library.

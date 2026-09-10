@@ -7,6 +7,10 @@ import BookFinder from "./pages/BookFinder.jsx";
 import LibraryGuide from "./pages/LibraryGuide.jsx";
 import StudentDashboard from "./pages/StudentDashboard.jsx";
 import AdminDemo from "./pages/AdminDemo.jsx";
+import Auth from "./pages/Auth.jsx";
+import Requests from "./pages/Requests.jsx";
+import RequestDetail from "./pages/RequestDetail.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
 /**
  * App holds the common layout (navbar + footer) and all the routes.
@@ -25,6 +29,10 @@ export default function App() {
           <Route path="/library-guide" element={<LibraryGuide />} />
           <Route path="/dashboard" element={<StudentDashboard />} />
           <Route path="/admin" element={<AdminDemo />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/requests" element={<Requests />} />
+          <Route path="/requests/:id" element={<RequestDetail />} />
+          <Route path="/admin/control" element={<AdminDashboard />} />
           {/* Fallback route for unknown URLs */}
           <Route
             path="*"

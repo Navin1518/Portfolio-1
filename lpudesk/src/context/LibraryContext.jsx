@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { sampleBooks } from "../data/books.js";
+import { sampleBooks } from "../books.js";
 import { libraryStats } from "../data/libraryStats.js";
 import { calculateOccupancy } from "../utils/occupancy.js";
 

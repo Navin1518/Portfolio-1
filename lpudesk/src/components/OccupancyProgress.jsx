@@ -1,5 +1,5 @@
 import StatusBadge from "./StatusBadge.jsx";
-import { barStyles } from "../utils/statusStyles.js";
+import { barStyles } from "../utils/statusStyle.js";
 
 /**
  * Progress bar for occupancy percentage.

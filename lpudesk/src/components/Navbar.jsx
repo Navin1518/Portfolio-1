@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.jsx";
 
 const navigationLinks = [
   { label: "Home", path: "/" },
@@ -7,11 +8,13 @@ const navigationLinks = [
   { label: "Book Finder", path: "/book-finder" },
   { label: "Library Guide", path: "/library-guide" },
   { label: "Dashboard", path: "/dashboard" },
-  { label: "Admin Demo", path: "/admin" },
+  { label: "Requests", path: "/requests" },
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
+  const visibleLinks = user?.role === "admin" ? [...navigationLinks, { label: "Admin", path: "/admin/control" }] : navigationLinks;
 
   // Same styling rule reused for desktop and mobile links.
   function linkClasses({ isActive }) {
@@ -37,11 +40,18 @@ export default function Navbar() {
 
         {/* Desktop menu */}
         <div className="hidden items-center gap-1 lg:flex">
-          {navigationLinks.map((link) => (
+          {visibleLinks.map((link) => (
             <NavLink key={link.path} to={link.path} className={linkClasses} end={link.path === "/"}>
               {link.label}
             </NavLink>
           ))}
+        </div>
+        <div className="hidden items-center gap-3 lg:flex">
+          {user ? (
+            <button type="button" onClick={logout} className="text-xs font-semibold text-slate-500 hover:text-brand-700">Sign out</button>
+          ) : (
+            <Link to="/auth" className="rounded-md bg-brand-700 px-3 py-2 text-sm font-semibold text-white">Sign in</Link>
+          )}
         </div>
 
         {/* Mobile menu button */}
@@ -62,7 +72,7 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="border-t border-slate-200 bg-white px-4 py-3 lg:hidden">
           <div className="flex flex-col gap-1">
-            {navigationLinks.map((link) => (
+            {visibleLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
